@@ -11,7 +11,7 @@
   (interactive)
   (insert "–"))
 
-;; Kill line 
+;; Kill line
 (defun backward-kill-line (arg)
   "Kill ARG lines backward."
   (interactive "p")
@@ -27,7 +27,7 @@
         (setq start (region-beginning)
               end   (region-end))
       (setq start (line-beginning-position)
-	    end   (line-end-position)))
+            end   (line-end-position)))
     (comment-or-uncomment-region start end)))
 
 ;; Kill Buffer Volatile
@@ -59,5 +59,11 @@ If point was already at that position, move point to beginning of line."
   "Open /etc/hosts as root."
   (interactive)
   (find-file "/sudo::/etc/hosts"))
+
+(defun switch-to-previous-buffer ()
+  "Switch to previously open buffer.
+Repeated invocations toggle between the two most recently open buffers."
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
 
 (provide 'defuns)
