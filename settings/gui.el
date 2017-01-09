@@ -6,8 +6,11 @@
 ;; Theming
 ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (setq custom-safe-themes t)
-(load-theme 'heroku t)
+(load-theme 'doom-one t)
 
+;; (require 'all-the-icons)
+
+;; (require 'spaceline)
 
 ;; Set alarm bell to visual warning
 (setq visible-bell t)
