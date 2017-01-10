@@ -12,6 +12,8 @@
 ;; Geoff says this is useful
 (bind-key "M-o" 'other-window)
 
+;; Magit
+(global-set-key (kbd "C-x g") 'magit-status)
 
 ;; CHORDS
 ;; key chords

@@ -26,3 +26,18 @@
   (overlay-put
    (car endless/margin-overlays) 'before-string
    (propertize " "  'display endless/margin-display)))
+
+
+;; Some powerline.spaceline bullshit?
+(use-package powerline
+  :if window-system
+  :config (setq-default powerline-default-separator 'nil))
+(use-package spaceline-all-the-icons :after spaceline :load-path "settings/spaceline-all-the-icons")
+(use-package spaceline :after powerline :ensure t
+  :config (setq-default mode-line-format '("%e" (:eval (spaceline-ml-ati)))))
+(use-package fancy-battery :after spaceline :defer 10
+  :config (fancy-battery-mode))
+
+;; (use-package spaceline-colors :after spaceline-custom :load-path "init/spaceline-colors"
+  ;; :init (add-hook 'after-init-hook 'spaceline-update-faces)
+  ;; :config (advice-add 'load-theme :after 'spaceline-update-faces))
