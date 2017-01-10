@@ -6,7 +6,7 @@
 ;; Theming
 ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (setq custom-safe-themes t)
-(load-theme 'doom-one t)
+(load-theme 'doom-molokai t)
 
 ;; (require 'all-the-icons)
 
