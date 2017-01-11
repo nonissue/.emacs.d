@@ -20,8 +20,8 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(require 'use-package)
-(require 'bind-key)
+(use-package use-package)
+(use-package bind-key)
 
 (setq use-package-always-ensure t)
 
@@ -32,10 +32,3 @@
 (require 'gui)
 (require 'key-bindings)
 (require 'defuns)
-
-;; adjust opacity
-(set-frame-parameter (selected-frame) 'alpha '(100 90))
-(add-to-list 'default-frame-alist '(alpha 100 90))
-
-;; highlight line
-(global-hl-line-mode 1)

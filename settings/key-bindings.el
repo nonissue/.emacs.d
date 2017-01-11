@@ -17,7 +17,8 @@
 
 ;; CHORDS
 ;; key chords
-(require 'key-chord)
+(use-package key-chord)
+;; (require 'key-chord)
 
 (key-chord-define-global "JJ" 'switch-to-previous-buffer)
 ;; (key-chord-define-global "BB" ')
