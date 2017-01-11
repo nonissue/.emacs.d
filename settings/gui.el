@@ -9,9 +9,9 @@
 (setq custom-safe-themes t) ;; in case I want to use custom themes
 
 (use-package doom-themes) ;; main theme
-(load-theme 'doom-molokai t)
-(use-package heroku-theme) ;; alternate
-(load-theme 'heroku-theme t)
+;; (load-theme 'doom-molokai t)
+(use-package heroku) ;; alternate
+(load-theme 'heroku t)
 
 
 ;; Other good themes
@@ -23,9 +23,8 @@
 
 ;; (require 'spaceline)
 
-
 ;; adjust opacity
-(set-frame-parameter (selected-frame) 'alpha '(100 90))
+(set-frame-parameter (selected-frame) 'alpha '(99 90))
 (add-to-list 'default-frame-alist '(alpha 100 90))
 
 ;; highlight line
@@ -43,6 +42,13 @@
 ;; Other visual stuff
 (global-linum-mode 1)
 (setq indicate-empty-lines -1)
+
+;; show line numbers dynamically with spaces
+(defadvice linum-update-window (around linum-dynamic activate)
+  (let* ((w (length (number-to-string
+                     (count-lines (point-min) (point-max)))))
+         (linum-format (concat " %" (number-to-string w) "d ")))
+    ad-do-it))
 
 ;; adjust border
 (let ((no-border '(internal-border-width . 0)))
