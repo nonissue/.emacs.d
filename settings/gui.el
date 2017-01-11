@@ -18,10 +18,13 @@
 ;; * heroku
 ;; * bubble or something
 
+;; Have to use require here, annoying.
+(use-package spaceline)
+(require 'spaceline-config)
+(spaceline-emacs-theme)
 
 ;; (require 'all-the-icons)
 
-;; (require 'spaceline)
 
 ;; adjust opacity
 (set-frame-parameter (selected-frame) 'alpha '(99 90))

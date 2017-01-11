@@ -32,14 +32,18 @@
 (require 'gui)
 (require 'key-bindings)
 (require 'defuns)
+(require 'skunkworks) ;; stuff in progress im playing with
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ivy-mode t)
  '(package-selected-packages
    (quote
-    (key-chord use-package heroku-theme heroku doom-themes))))
+    (counsel swiper spaceline spaceline-config ivy key-chord use-package heroku-theme heroku doom-themes))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
