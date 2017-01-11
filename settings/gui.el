@@ -10,7 +10,7 @@
 
 (use-package doom-themes) ;; main theme
 ;; (load-theme 'doom-molokai t)
-(use-package heroku) ;; alternate
+(use-package heroku-theme) ;; alternate
 (load-theme 'heroku t)
 
 
