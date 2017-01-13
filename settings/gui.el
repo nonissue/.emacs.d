@@ -5,14 +5,14 @@
 
 
 ;; Theming
-;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (setq custom-safe-themes t) ;; in case I want to use custom themes
 
-(use-package doom-themes) ;; main theme
+;; (use-package doom-themes) ;; main theme
 ;; (load-theme 'doom-molokai t)
-(use-package heroku-theme) ;; alternate
-(load-theme 'heroku t)
-
+;; (use-package heroku-theme) ;; alternate
+;; (load-theme 'heroku t)
+(load-theme 'spacedust t)
 
 ;; Other good themes
 ;; * heroku
