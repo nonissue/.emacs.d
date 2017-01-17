@@ -11,8 +11,8 @@
 ;; (use-package doom-themes) ;; main theme
 ;; (load-theme 'doom-molokai t)
 ;; (use-package heroku-theme) ;; alternate
-;; (load-theme 'heroku t)
-(load-theme 'spacedust t)
+(load-theme 'heroku t)
+;; (load-theme 'spacedust t)
 
 ;; Other good themes
 ;; * heroku
