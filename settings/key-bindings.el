@@ -27,4 +27,7 @@
 
 (key-chord-mode +1)
 
+;; Neotree hotkey
+(global-set-key [f8] 'neotree-toggle)
+
 (provide 'key-bindings)

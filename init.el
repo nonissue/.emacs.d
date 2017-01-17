@@ -31,6 +31,9 @@
 ;; load other settings
 (add-to-list 'load-path "~/.emacs.d/settings")
 
+(unless (boundp 'window-system)
+        (defvar window-system (framep-on-display)))
+
 (require 'sane-defaults)
 (require 'gui)
 (require 'key-bindings)
