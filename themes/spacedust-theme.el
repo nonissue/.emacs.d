@@ -19,7 +19,6 @@
   (custom-theme-set-faces
    'spacedust
    `(default ((t (:foreground ,spacedust-fg :background ,spacedust-bg))))
-   `(fringe ((t (nil :background ,spacedust-bg :foreground ,spacedust-fg))))
    `(cursor ((t (:foreground ,spacedust-fg))))
    `(font-lock-builtin-face ((t (:foreground ,spacedust-yellow))))
    `(font-lock-keyword-face ((t (:foreground ,spacedust-yellow))))
@@ -37,6 +36,4 @@
    `(mode-line-inactive ((,class (:background ,spacedust-gray-2 :foreground ,spacedust-fg))))
  ))
 
-
-
-(provide 'spacedust)
+(provide-theme 'spacedust)

@@ -50,8 +50,8 @@
 ;; Change scrolling behaviour
 ;; (Maybe make this laptop only?)
 (setq scroll-conservatively 101)
-(setq mouse-wheel-scroll-amount '(1))
-(setq mouse-wheel-progressive-speed nil)
+(setq mouse-wheel-scroll-amount '(1)) ;; increasing this increases speed
+(setq mouse-wheel-progressive-speed 0)
 
 ;; Clean up whitespace on save
 (add-hook 'before-save-hook 'whitespace-cleanup)

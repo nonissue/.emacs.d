@@ -9,27 +9,31 @@
 
 ;; Current appearance config
 (use-package neotree)
+(use-package avk-emacs-themes)
 
-(use-package doom-themes
-  :config
-  (setq doom-neotree-enable-variable-pitch t
-        doom-neotree-file-icons 'simple
-        doom-neotree-line-spacing 3)
-  ;; (load-theme doom-molokai t)
-  ;; brighter source buffers
-  (add-hook 'find-file-hook 'doom-buffer-mode)
-  ;; Custom neotree theme
-  (when window-system
-    (require 'doom-neotree)))
-;; (use-package doom-themes)
+;; (use-package doom-themes
+;;   :config
+;;   (setq doom-neotree-enable-variable-pitch t
+;;         doom-neotree-file-icons 'simple
+;;         doom-neotree-line-spacing 3)
+;;   ;; (load-theme doom-molokai t)
+;;   ;; brighter source buffers
+;;   (add-hook 'find-file-hook 'doom-buffer-mode)
+;;   ;; Custom neotree theme
+;;   (when window-system
+;;     (require 'doom-neotree)))
+;; (use-package doom-molokai)
+;; (require 'doom-themes)
 ;; (require 'all-the-icons)
-(load-theme 'doom-one t)
+;; (load-theme 'doom-molokai t)
 ;; (require 'doom-neotree)
 ;; (use-package heroku-theme) ;; alternate
 ;; (load-theme 'heroku t)
 ;; (load-theme 'spacedust t)
 ;; (load-theme 'spacegray t)
-;; (load-theme 'minimal-light t)
+(load-theme 'avk-darkblue-white)
+;; (load-theme 'minimal-Light t)
+;; (load-theme 'minimal)
 ;; (load-theme 'ayu t)
 ;; Other good themes
 ;; * heroku
@@ -38,18 +42,18 @@
 ;; Have to use require here, annoying.
 (use-package spaceline)
 (require 'spaceline-config)
-(spaceline-emacs-theme)
-(setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
-(set-face-attribute 'mode-line nil :box nil)
+;; (spaceline-emacs-theme)
+;; (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
+;; (set-face-attribute 'mode-line nil :box nil)
 
 
 
-;; (require 'all-the-icons)
+(require 'all-the-icons)
 
 
 ;; adjust opacity
-(set-frame-parameter (selected-frame) 'alpha '(99 90))
-(add-to-list 'default-frame-alist '(alpha 100 90))
+;; (set-frame-parameter (selected-frame) 'alpha '(99 90))
+;; (add-to-list 'default-frame-alist '(alpha 100 90))
 
 ;; highlight line
 (global-hl-line-mode 1)
@@ -89,6 +93,8 @@
 
 ;; (setq ring-bell-function 'my-bell-function)
 
+
+;; Cooool. The snippet below flashes modeline for bell
 (defvar doom--modeline-bg nil)
 
 (setq ring-bell-function
@@ -107,6 +113,6 @@
     nil))
 
 (when (font-exists-p "SF Mono")
-  (set-frame-font "SF Mono-12"))
+  (set-frame-font "SF Mono-13"))
 
 (provide 'gui)

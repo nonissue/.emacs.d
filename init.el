@@ -39,3 +39,4 @@
 (require 'key-bindings)
 (require 'defuns)
 (require 'skunkworks) ;; stuff in progress im playing with
+(require 'languages)
