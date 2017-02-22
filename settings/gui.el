@@ -1,5 +1,30 @@
 ;; Contains GUI settings and defuns
 
+;; Good themes:
+
+;; Dark variants:
+;; avk-darkblue-white
+;; heroku
+;; busybee
+;; doom
+;; minimal (comes in light, great for writing)
+;; sanityinc
+;; darktooth
+;; dracula
+;; django *** (I like it, bit dark)
+;; Lavender-theme *** (problem: highlight line looks ugly)
+;; rebecca-theme ***
+;; Reykjavik Theme *** (little flat with javascript)
+;; * Subatomic Theme ***** current favorite. available in 256
+;; purple haze (bit dark)
+;; misteriso ***
+;; soothe
+;; tao
+;; twilight?
+
+;; Light:
+;; Twilight Bright Theme
+
 ;; Get rid of ugly splash screen
 (setq inhibit-startup-screen t)
 
@@ -9,7 +34,7 @@
 
 ;; Current appearance config
 (use-package neotree)
-(use-package avk-emacs-themes)
+(use-package subatomic-theme)
 
 ;; (use-package doom-themes
 ;;   :config
@@ -22,29 +47,28 @@
 ;;   ;; Custom neotree theme
 ;;   (when window-system
 ;;     (require 'doom-neotree)))
-;; (use-package doom-molokai)
-;; (require 'doom-themes)
-;; (require 'all-the-icons)
-;; (load-theme 'doom-molokai t)
-;; (require 'doom-neotree)
-;; (use-package heroku-theme) ;; alternate
-;; (load-theme 'heroku t)
-;; (load-theme 'spacedust t)
-;; (load-theme 'spacegray t)
-(load-theme 'avk-darkblue-white)
-;; (load-theme 'minimal-Light t)
-;; (load-theme 'minimal)
-;; (load-theme 'ayu t)
-;; Other good themes
-;; * heroku
-;; * bubble or something
+
+;; (
+(use-package all-the-icons)
+;; (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+;; (load-theme 'avk-darkblue-white)
+
+;; (use-package apropospriate-theme
+;;   :config
+;;   (load-theme 'apropospriate-light t))
+
+;; (load-theme 'apropospriate-dark)
+
+(when window-system
+    (require 'doom-neotree))
 
 ;; Have to use require here, annoying.
 (use-package spaceline)
 (require 'spaceline-config)
 ;; (spaceline-emacs-theme)
-;; (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
-;; (set-face-attribute 'mode-line nil :box nil)
+;; (spaceline-spacemacs-theme)
+(setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
+(set-face-attribute 'mode-line nil :box nil)
 
 
 
