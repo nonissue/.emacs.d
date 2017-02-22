@@ -53,27 +53,18 @@
 ;; (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 ;; (load-theme 'avk-darkblue-white)
 
-;; (use-package apropospriate-theme
-;;   :config
-;;   (load-theme 'apropospriate-light t))
-
-;; (load-theme 'apropospriate-dark)
-
 (when window-system
     (require 'doom-neotree))
 
-;; Have to use require here, annoying.
+
 (use-package spaceline)
-(require 'spaceline-config)
+(require 'spaceline-config) ;; Have to use require here, annoying.
 ;; (spaceline-emacs-theme)
 ;; (spaceline-spacemacs-theme)
 (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
 (set-face-attribute 'mode-line nil :box nil)
 
-
-
 (require 'all-the-icons)
-
 
 ;; adjust opacity
 ;; (set-frame-parameter (selected-frame) 'alpha '(99 90))
