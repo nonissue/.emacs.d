@@ -18,12 +18,39 @@
         ;; allow input not in order
         '((t   . ivy--regex-ignore-order))))
 
+(use-package projectile
+  :init
+  (projectile-mode)
+  :config
+  (setq projectile-mode-line '(:eval (format " [%s]" (projectile-project-name)))))
+
+;; I don't know why this works
+;; But projectile didn't work until it was addedcx
+(projectile-global-mode +1)
+(setq projectile-enable-caching t)
+
+(use-package counsel-projectile
+  :init
+  (counsel-projectile-on))
+
+(use-package magit)
+
+(use-package evil)
+(evil-mode 1)
+
+(use-package evil-surround)
+(global-evil-surround-mode 1)
+
+(use-package evil-visualstar)
+(global-evil-visualstar-mode)
 
 ;; ivy initial keybindings
 (global-set-key "\C-s" 'swiper)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "<f6>") 'ivy-resume)
 (global-set-key (kbd "M-x") 'counsel-M-x)
+;; (global-set-key (kbd "s-p") #'counsel-projectile-find-file)
+(global-set-key (kbd "s-p") #'counsel-projectile)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "<f1> f") 'counsel-describe-function)
 (global-set-key (kbd "<f1> v") 'counsel-describe-variable)

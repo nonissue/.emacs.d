@@ -34,22 +34,24 @@
 (unless (boundp 'window-system)
         (defvar window-system (framep-on-display)))
 
+(use-package no-littering
+  :init
+  (require 'no-littering))
+
+;; (use-package projectile
+;;   :init
+;;   (projectile-mode)
+;;   :config
+;;   (setq projectile-mode-line '(:eval (format " [%s]" (projectile-project-name)))))
+
+;; (use-package counsel-projectile
+;;   :init
+;;   (counsel-projectile-on))
+
+
 (require 'sane-defaults)
 (require 'gui)
 (require 'key-bindings)
 (require 'defuns)
+(require 'languages)
 (require 'skunkworks) ;; stuff in progress im playing with
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ivy-mode t)(require 'languages)
-   (quote
-    (lua-mode counsel swiper spaceline spaceline-config ivy key-chord use-package heroku-theme heroku doom-themes))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

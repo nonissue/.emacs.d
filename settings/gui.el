@@ -34,39 +34,34 @@
 
 ;; Current appearance config
 (use-package neotree)
-(use-package subatomic-theme)
+(use-package subatomic256-theme)
 
-;; (use-package doom-themes
-;;   :config
-;;   (setq doom-neotree-enable-variable-pitch t
-;;         doom-neotree-file-icons 'simple
-;;         doom-neotree-line-spacing 3)
-;;   ;; (load-theme doom-molokai t)
-;;   ;; brighter source buffers
-;;   (add-hook 'find-file-hook 'doom-buffer-mode)
-;;   ;; Custom neotree theme
-;;   (when window-system
-;;     (require 'doom-neotree)))
 
-;; (
+;; Annoyingly have to use require
+;; Looks better than neotree default
 (use-package all-the-icons)
-;; (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-;; (load-theme 'avk-darkblue-white)
+(when (display-graphic-p)
+  (require 'doom-neotree))
 
-(when window-system
-    (require 'doom-neotree))
+(when (display-graphic-p)
+  (use-package subatomic-theme))
+
+(when (not (display-graphic-p))
+  (use-package subatomic256-theme))
 
 
 (use-package spaceline)
 (require 'spaceline-config) ;; Have to use require here, annoying.
-;; (spaceline-emacs-theme)
-;; (spaceline-spacemacs-theme)
-(setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
+;; this doesn't look quite right, but it works
+(spaceline-emacs-theme)
+
+;; (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
 (set-face-attribute 'mode-line nil :box nil)
 
 (require 'all-the-icons)
 
 ;; adjust opacity
+;; I like this, but I think it has a markedly negative effect on perf.
 ;; (set-frame-parameter (selected-frame) 'alpha '(99 90))
 ;; (add-to-list 'default-frame-alist '(alpha 100 90))
 
@@ -78,7 +73,8 @@
 
 ;; disable superfluous gui
 (menu-bar-mode -1)
-(toggle-scroll-bar -1)
+(when (display-graphic-p)
+  (toggle-scroll-bar -1))
 (tool-bar-mode -1)
 (blink-cursor-mode -1)
 
@@ -93,22 +89,6 @@
          (linum-format (concat " %" (number-to-string w) "d ")))
     ad-do-it))
 
-;; adjust border
-;;; (let ((no-border '(internal-border-width . 0)))
-;;   (add-to-list 'default-frame-alist no-border)
-;;   (add-to-list 'initial-frame-alist no-border))
-
-;; Disable alarm bell when over-scrolling because it is annoying
-;; (defun my-bell-function ()
-;;   (unless (memq this-command
-;;                 '(isearch-abort abort-recursive-edit exit-minibuffer
-;;                                 keyboard-quit mwheel-scroll down up next-line previous-line
-;;                                 backward-char forward-char))
-;;     (ding)))
-
-;; (setq ring-bell-function 'my-bell-function)
-
-
 ;; Cooool. The snippet below flashes modeline for bell
 (defvar doom--modeline-bg nil)
 
@@ -121,6 +101,7 @@
          0.1 nil
          (lambda () (set-face-attribute 'mode-line nil :background doom--modeline-bg)))))
 
+;; Set font
 (defun font-exists-p (font)
   "Check that a font exists."
   (if (member font (font-family-list))
