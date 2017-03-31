@@ -1,0 +1,1 @@
+("~/Dropbox/Sync/.hammerspoon/" "~/.emacs.d/" "~/code/phoenix/bored/" "~/code/js/ts-demo/" "~/code/elixir/weather/")
